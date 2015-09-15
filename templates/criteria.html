@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block head_post %}
+{# Add your css and scripts. #}
+    <script type="javascript">
+        alert('dsf');
+        console.log("test");
+        $('#tab').tab();
+    </script>
+{% endblock %}
+
+{% block conainer %}
+  <div class="ui grid">
+    <div class="sixteen wide column">
+        <div class="ui segment">
+            <h2>Конструктор критерия</h2>
+            <div class="ui form">
+                <div class="criterion_form__container">
+                    <div class="criterion_data__container">
+                        <div class="form-horizontal">
+                            <div class="form-group"><label class="col-sm-2 control-label" for="identity">
+                                Идентификатор</label>
+
+                                <div class="col-sm-10"><input value="oval:ru.ussc.datapk-b420ce3d0314315:tst:1"
+                                                              class="form-control" data-bind="textInput: oval_id"
+                                                              disabled="disabled" id="identity"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label"
+                                                           for="name">Наименование</label>
+
+                                <div class="col-sm-10"><input class="form-control" data-bind="textInput: name"
+                                                              id="name"></div>
+                            </div>
+                            <div class="ui divider"></div>
+                            <div class="form-group"><label class="col-sm-2 control-label" for="key">Ключ</label>
+
+                                <div class="col-sm-10"><input class="form-control"
+                                                              data-bind="textInput: current_state_value.reg_key"
+                                                              id="key"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label"
+                                                           for="parameter">Параметр</label>
+
+                                <div class="col-sm-10"><input class="form-control"
+                                                              data-bind="textInput: current_state_value.reg_parameter"
+                                                              id="parameter"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label" for="tab">Тип
+                                ключа</label>
+
+                                <div class="col-sm-10">
+                                    <ul class="nav nav-pills" id="tab" role="tablist">
+                                        <li class="active"
+                                            role="presentation"><a aria-controls="number"
+                                                                   data-toggle="tab" href="#number"
+                                                                   role="tab">Число</a>
+                                        </li>
+                                        <li
+                                            role="presentation"><a aria-controls="string"
+                                                                   data-toggle="tab" href="#string"
+                                                                   role="tab">Строка</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active"
+                                             id="number" role="tabpanel"><br>
+
+                                            <div class="row">
+                                                <div class="col-md-3"><label>Оператор сравнения</label></div>
+                                                <div class="col-md-3"><select class="form-control">
+
+                                                    <option selected="selected" value="equals">=</option>
+                                                    <option value="not equal">!=</option>
+                                                    <option value="greater than">&gt;</option>
+                                                    <option value="less than">&lt;</option>
+                                                    <option value="greater than or equal">&gt;=</option>
+                                                    <option value="less than or equal">&lt;=</option>
+                                                </select></div>
+                                                <div class="col-md-2"><label>Значение</label></div>
+                                                <div class="col-md-2"><input value="0"
+                                                                             style="text-transform: uppercase">
+                                                </div>
+                                            </div>
+                                            <br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="well well-lg">
+                                                        <span>Значение взятое по ключу&nbsp;&nbsp; 'key'&nbsp; >= &nbsp; 0</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane"
+                                             id="string" role="tabpanel">
+                                            <br>
+
+                                            <div class="row">
+                                                <div class="col-md-10"><select class="form-control">
+                                                    <option selected="selected" value="equals">=</option>
+                                                    <option value="not equal">!=</option>
+                                                    <option value="greater than">&gt;</option>
+                                                    <option value="less than">&lt;</option>
+                                                    <option value="greater than or equal">&gt;=</option>
+                                                    <option value="less than or equal">&lt;=</option>
+                                                </select></div>
+                                            </div>
+                                            <br>
+
+                                            <div class="row">
+                                                <div class="col-md-2"><label>Значение</label></div>
+                                                <div class="col-md-8">
+                                                    <input value="0">
+                                                </div>
+                                            </div>
+                                            <br>
+
+                                            <div class="row">
+                                                <div class="col-md-10">
+                                                    <div class="well well-lg">
+                                                        <span>Значение взятое по ключу&nbsp;&nbsp;'key' = 'test'</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
+                    <div class="actions pull-right">
+                        <button class="btn btn-success save_hostdata__button">
+                            Создать критерий
+                        </button>
+                        <a class="btn btn-default" href="http://localhost/criteria">Отмена</a></div>
+                    <br><br></div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
